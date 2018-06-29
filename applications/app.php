@@ -16,7 +16,7 @@ $host = (!empty($_ENV['MYSQL_PORT'])) ? $_ENV['MYSQL_HOST'] . ':' . $_ENV['MYSQL
       . '; db=' . $_ENV['MYSQL_DB']);
     
     /** @var \Amp\Mysql\Statement $statement */
-    $statement = yield $pool->prepare("SELECT COUNT(1) FROM core_resource_tests;");
+    $statement = yield $pool->prepare("SELECT * FROM core_resource_tests;");
     
     /** @var \Amp\Mysql\ResultSet $result */
     $result = yield $statement->execute();
